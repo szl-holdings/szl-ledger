@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "repo_name": "szl-ledger",
+    "last_audit_date": "2026-11-23",
+    "loop_level": 1
+  },
+  "estate_context": {
+    "purpose_domain": "Versioned append-only ledger for the SZL Holdings governed-AI estate.",
+    "baseline_commit": "a1c0fe0f13813471490f59772d3b2e2c77be8bbd",
+    "leader_profiles": [
+      {
+        "name": "EventStore (assigned szl-ledger domain leader)",
+        "url": "https://github.com/EventStore/EventStore",
+        "checked_date": "2026-11-23"
+      }
+    ]
+  },
+  "evidence_index": {
+    "publications": [
+      {
+        "id": "github:EventStore/EventStore",
+        "link": "https://github.com/EventStore/EventStore",
+        "applicability": "Assigned canonical append-only event-store leader relevant to the versioned append-only ledger domain."
+      }
+    ],
+    "gap_register": [
+      "workflows_measured is an empty list; no CI workflows exist in this snapshot.",
+      "Recent history contains two commits, headed by a v0.1.0 scaffold commit; the README describes the current scope as scaffold only with nothing published yet.",
+      "The README lists the versioned schema, JSONL sha256 chaining, append/read API, fail-closed validation CLI, and tests as planned v0.1.0 scope rather than documenting released use."
+    ],
+    "prioritized_changes": [
+      "Add and run a CI workflow for the scaffold's validation and tests, addressing the measured absence of CI workflows.",
+      "Update the README with verified post-scaffold status and usage evidence as the planned ledger features are implemented and validated.",
+      "Retain the README's trusted-publisher sequence by registering publishing only in the first release window that publishes the package."
+    ]
+  },
+  "execution_trace": {}
+}
