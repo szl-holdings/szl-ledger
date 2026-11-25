@@ -1,0 +1,1849 @@
+{
+ "schema": "szl.estate.hf-cleanup/v1",
+ "date": "2026-11-25",
+ "lane": "W27 CTO (Kimi executor contract v2), device rail betterwithage",
+ "authorization": "Owner directive 2026-11-25: delete untrained HF models; keep only fully-trained models with training receipts.",
+ "census_total": 436,
+ "criterion": {
+  "keep": "training receipt present: any .json whose name matches training_receipt|train_receipt|training_report (merge_receipt and eval receipts excluded, SVG/visual card receipts excluded as decoration) OR model is private",
+  "delete": "public model with no training receipt after full-file re-probe"
+ },
+ "result": {
+  "kept": 91,
+  "deleted": 345,
+  "failed": 0,
+  "removed_download_events": 22196
+ },
+ "verification": [
+  "full-file re-probe of all 345 delete candidates via list_repo_files (census receipt cache capped at 6 files/model)",
+  "all deletions 404-verified via model_info after delete_repo",
+  "final census: 91 live == 91 expected, 0 keep-models missing",
+  "all 7 M5 verticals confirmed present in keep list: a11oy-r1 terra-r1 lyte-r1 finance-r1 killinchu-r1 sentra-r1 counsel-r1",
+  "private models (28) kept unconditionally; datasets and spaces untouched"
+ ],
+ "rescued_by_reprobe": [
+  "SZLHOLDINGS/szl-receiptagent-qwen35-0.8b-v2",
+  "SZLHOLDINGS/szl-training-scripts",
+  "SZLHOLDINGS/szl-receiptagent-qwen35-0.8b-v3-candidate"
+ ],
+ "kept_ids": [
+  "SZLHOLDINGS/szl-governed-norm",
+  "SZLHOLDINGS/szl-lambda-gate",
+  "SZLHOLDINGS/szl-kernels",
+  "SZLHOLDINGS/szl-blocked",
+  "SZLHOLDINGS/szl-govsign",
+  "SZLHOLDINGS/szl-provctl",
+  "SZLHOLDINGS/szl-nemo",
+  "SZLHOLDINGS/szl-invariants",
+  "SZLHOLDINGS/szl-ouroboros",
+  "SZLHOLDINGS/szl-formulas",
+  "SZLHOLDINGS/SZL-Forge-1.5B-ReceiptAgent",
+  "SZLHOLDINGS/SZL-Khipu-1.5B",
+  "SZLHOLDINGS/SZL-Khipu-1.5B-GGUF",
+  "SZLHOLDINGS/KHIPU-R2",
+  "SZLHOLDINGS/WILLAY",
+  "SZLHOLDINGS/KILLINCHU-EYE",
+  "SZLHOLDINGS/YARQA-ATTN",
+  "SZLHOLDINGS/chaski",
+  "SZLHOLDINGS/qantu",
+  "SZLHOLDINGS/waman",
+  "SZLHOLDINGS/chakana",
+  "SZLHOLDINGS/tinku",
+  "SZLHOLDINGS/SZL-Khipu-1.5B-abstain",
+  "SZLHOLDINGS/chaski-5050",
+  "SZLHOLDINGS/chaski-r2",
+  "SZLHOLDINGS/szl-khipu",
+  "SZLHOLDINGS/TinyKhipu-Nano",
+  "SZLHOLDINGS/ReceiptAgent-Nano",
+  "SZLHOLDINGS/Moons-Nano",
+  "SZLHOLDINGS/MiniEmbed-Nano",
+  "SZLHOLDINGS/brain-navigator-r2",
+  "SZLHOLDINGS/szl-receiptagent-qwen35-0.8b-v3",
+  "SZLHOLDINGS/khipu-r3",
+  "SZLHOLDINGS/szl-triage-qwen3.5-0.8b-lora-study5",
+  "SZLHOLDINGS/chaski-r4",
+  "SZLHOLDINGS/szl-triage-qwen3.5-0.8b-nemo-candidate",
+  "SZLHOLDINGS/szl-receiptagent-qwen35-0.8b-v3-nemo-candidate",
+  "SZLHOLDINGS/szl-receiptagent-qwen25-1.5b-experimental-20261104",
+  "SZLHOLDINGS/navigator-candidate_enterprise_20261104",
+  "SZLHOLDINGS/receiptagent_v1-candidate_enterprise_20261104",
+  "SZLHOLDINGS/receiptagent_v3-candidate_enterprise_20261104",
+  "SZLHOLDINGS/chakana-r1-candidate",
+  "SZLHOLDINGS/hatun-24-doctrine-math-r1-candidate",
+  "SZLHOLDINGS/a11oy-code-r1-candidate",
+  "SZLHOLDINGS/salad-x402-frontier-v1",
+  "SZLHOLDINGS/salad-axiom-invariants-r2",
+  "SZLHOLDINGS/salad-ring-v1",
+  "SZLHOLDINGS/salad-ring-v1b",
+  "SZLHOLDINGS/salad-ring-v2",
+  "SZLHOLDINGS/salad-ring-serve-gemma1",
+  "SZLHOLDINGS/salad-ring-serve-llama1",
+  "SZLHOLDINGS/salad-ring-serve-mistral1",
+  "SZLHOLDINGS/salad-flagship54-v2",
+  "SZLHOLDINGS/salad-ring-v3",
+  "SZLHOLDINGS/salad-ring-ouro-l12",
+  "SZLHOLDINGS/salad-ring-ouro-l15",
+  "SZLHOLDINGS/salad-ring-ouro-l16",
+  "SZLHOLDINGS/salad-ring-ouro-l17",
+  "SZLHOLDINGS/salad-ring-ouro-l18",
+  "SZLHOLDINGS/SZL-Khipu-Yachay-Nano",
+  "SZLHOLDINGS/salad-chaski-r4-mix1",
+  "SZLHOLDINGS/szl-canary-lora-20261119",
+  "SZLHOLDINGS/salad-chaski-frontier-4b-op1",
+  "SZLHOLDINGS/salad-chaski-frontier-9b-op1",
+  "SZLHOLDINGS/salad-governed-grounded-1p7b-canary",
+  "SZLHOLDINGS/salad-governed-distill-27b-qlora-r1",
+  "SZLHOLDINGS/salad-ring-ouro-l13b",
+  "SZLHOLDINGS/szl-scratch-r4-upload-validation",
+  "SZLHOLDINGS/frontier-promotion-gate-v1",
+  "SZLHOLDINGS/szl-scratch-frontier-canary-r4",
+  "SZLHOLDINGS/salad-khipu-scholar-4b-v2",
+  "SZLHOLDINGS/salad-chaski-frontier-9b-op1-r2",
+  "SZLHOLDINGS/salad-chaski-frontier-9b-op1-r9",
+  "SZLHOLDINGS/salad-chaski-frontier-9b-op1-r3",
+  "SZLHOLDINGS/salad-chaski-frontier-9b-op1-r11",
+  "SZLHOLDINGS/salad-best-khipu-r4",
+  "SZLHOLDINGS/salad-chaski-frontier-9b-op1-r12",
+  "SZLHOLDINGS/salad-chaski-frontier-4b-narrow1",
+  "SZLHOLDINGS/salad-chaski-frontier-9b-narrow1",
+  "SZLHOLDINGS/a11oy-r1",
+  "SZLHOLDINGS/salad-chaski-frontier-9b-op1-r13",
+  "SZLHOLDINGS/terra-r1",
+  "SZLHOLDINGS/killinchu-r1",
+  "SZLHOLDINGS/sentra-r1",
+  "SZLHOLDINGS/lyte-r1",
+  "SZLHOLDINGS/finance-r1",
+  "SZLHOLDINGS/counsel-r1",
+  "SZLHOLDINGS/khipu-structure-v2",
+  "SZLHOLDINGS/szl-receiptagent-qwen35-0.8b-v2",
+  "SZLHOLDINGS/szl-training-scripts",
+  "SZLHOLDINGS/szl-receiptagent-qwen35-0.8b-v3-candidate"
+ ],
+ "deleted": [
+  {
+   "id": "SZLHOLDINGS/governed-inference-meter",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/SZLHOLDINGS",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/szl-khipu-kernels",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/szl-energy-attest",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/oac-clinical-transport-health-v1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/a11oy-v19-substrate",
+   "downloads": 3,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/A11OY-MINI",
+   "downloads": 1246,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/szl-receipt-attn",
+   "downloads": 14,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/szl-maskmod",
+   "downloads": 49,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/szl-block-kv",
+   "downloads": 53,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/oac-system-health-v1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/szl-receiptagent-qwen35-0.8b-v2-merged",
+   "downloads": 923,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/szl-triage-qwen3.5-0.8b-lora",
+   "downloads": 305,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/szl-triage-linear-development-v1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/szl-triage-retrain",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/szl-receiptagent-qwen35-0.8b-v3-authenticated",
+   "downloads": 7,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/oac-ops-health-v2",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/qwen2.5-0.5b-laptop-lora",
+   "downloads": 31,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/receiptagent-v3-laptop-lora",
+   "downloads": 29,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/brain-navigator-r2-laptop-lora",
+   "downloads": 29,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/chaski-laptop-lora",
+   "downloads": 28,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/chaski-5050-laptop-lora",
+   "downloads": 28,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/chaski-r2-laptop-lora",
+   "downloads": 28,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/chaski-r4-laptop-lora",
+   "downloads": 32,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/khipu-r3-laptop-lora",
+   "downloads": 29,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/SZL-Forge-1.5B-ReceiptAgent-laptop-lora",
+   "downloads": 32,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/SZL-Khipu-1.5B-laptop-lora",
+   "downloads": 33,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/szl-receiptagent-qwen35-0.8b-v2-laptop-lora",
+   "downloads": 31,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/szl-receiptagent-qwen35-0.8b-v2-merged-laptop-lora",
+   "downloads": 32,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/szl-receiptagent-qwen35-0.8b-v3-laptop-lora",
+   "downloads": 30,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/szl-triage-qwen3.5-0.8b-lora-laptop-lora",
+   "downloads": 31,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/szl-triage-qwen3.5-0.8b-lora-study5-laptop-lora",
+   "downloads": 32,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/WILLAY-laptop-lora",
+   "downloads": 32,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/SZL-Khipu-1.5B-abstain-laptop-lora",
+   "downloads": 25,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/SZL-Khipu-1.5B-GGUF-laptop-lora",
+   "downloads": 29,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/KHIPU-R2-laptop-lora",
+   "downloads": 27,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/A11OY-MINI-laptop-lora",
+   "downloads": 35,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/forge-v3",
+   "downloads": 363,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/ChaskaLLM",
+   "downloads": 18,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/szl1-experimental-massed-20261104",
+   "downloads": 75,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/szl-specdecode",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/khipu-abstain-r3-candidate",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/szl-receiptagent-qwen35-0.8b-sft-v3",
+   "downloads": 548,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/SZL-Khipu-1.5B-sft-v2",
+   "downloads": 301,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/szl-receiptagent-qwen35-0.8b-dpo-v1",
+   "downloads": 385,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/SZL-Khipu-1.5B-estate-sft-v1",
+   "downloads": 336,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/szl-receiptagent-qwen35-0.8b-dpo-v2",
+   "downloads": 395,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/KHIPU-R2-estate-sft-v1",
+   "downloads": 310,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/SZL-Forge-1.5B-ReceiptAgent-estate-sft-v1",
+   "downloads": 254,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/chaski-estate-sft-v1",
+   "downloads": 314,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/szl-receiptagent-qwen35-0.8b-v2m-estate-sft-v1",
+   "downloads": 621,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/chaski-5050-estate-sft-v1",
+   "downloads": 305,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/chaski-r2-estate-sft-v1",
+   "downloads": 301,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/brain-navigator-r2-estate-sft-v1",
+   "downloads": 296,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/WILLAY-estate-sft-v1",
+   "downloads": 264,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/szl-receiptagent-qwen35-0.8b-v3-estate-sft-v1",
+   "downloads": 309,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/khipu-r3-estate-sft-v1",
+   "downloads": 303,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/szl1-experimental-estate-sft-v1",
+   "downloads": 259,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/Nemotron-Mini-4B-Instruct-st",
+   "downloads": 290,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/SZL-Nemotron-Mini-4B-Estate-v1",
+   "downloads": 981,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/SZL-Nemotron-Mini-4B-Estate-DPO-v1",
+   "downloads": 267,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/SZL-Specialized-Domains-v1",
+   "downloads": 200,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/SZL-Showcase-Systems-v1",
+   "downloads": 189,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/SZL-Nemotron-Mini-4B-Doctrine-v1",
+   "downloads": 213,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/SZL-Reasoning-0.8B-v1",
+   "downloads": 614,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/SZL-Nemotron-Mini-4B-Estate-DPO-v2",
+   "downloads": 372,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/SZL-FreeEnergy-0.8B-v1",
+   "downloads": 735,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/SZL-AncientMath-0.8B-v1",
+   "downloads": 763,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/SZL-AcousticGovernance-0.8B-v1",
+   "downloads": 714,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/SZL-FreeEnergy-0.8B-DPO-v1",
+   "downloads": 566,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/SZL-GovernedDistill-0.8B-v1",
+   "downloads": 285,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/szl-brain",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/abstention-v2-candidate",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/physics-master-v1-candidate",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/quant-master-v1-candidate",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/code-master-v2-candidate",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/code-master-v3-fresh",
+   "downloads": 63,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/doctrine-master-v1-candidate",
+   "downloads": 50,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/measurement-master-v1-candidate",
+   "downloads": 53,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/reasoning-master-v1-candidate",
+   "downloads": 39,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/quant-master-4b-v1-candidate",
+   "downloads": 34,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/quant-master-4b-500step-candidate",
+   "downloads": 34,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/quant-master-1.7b-500step-candidate",
+   "downloads": 31,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/SZL-Khipu-1.5B-v2-trained",
+   "downloads": 111,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/chaski-v2-trained",
+   "downloads": 162,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/willay-v2-trained",
+   "downloads": 179,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/khipu-r2-v2-trained",
+   "downloads": 170,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/brain-navigator-v2-trained",
+   "downloads": 180,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/chakana-v2-trained",
+   "downloads": 171,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/freeenergy-v2-trained",
+   "downloads": 186,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/doctrine-v2-trained",
+   "downloads": 172,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/ouroboros-v2-trained",
+   "downloads": 181,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/miniembed-v2-trained",
+   "downloads": 144,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/hatun-24-v2-trained",
+   "downloads": 146,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/ancient-math-v2-trained",
+   "downloads": 145,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/acoustic-v2-trained",
+   "downloads": 134,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/lean-invariants-v2-trained",
+   "downloads": 145,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/papers-v2-trained",
+   "downloads": 144,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/creativity-v2-trained",
+   "downloads": 135,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/triage-v2-trained",
+   "downloads": 144,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/receiptagent-v2-trained",
+   "downloads": 140,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/forge-1.5b-v2-trained",
+   "downloads": 135,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/khipu-abstain-v2-trained",
+   "downloads": 133,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/szl-receiptagent-0.8b-v2-trained",
+   "downloads": 135,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/chaski-r4-v2-trained",
+   "downloads": 130,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/chaski-r2-v2-trained",
+   "downloads": 135,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/chaski-5050-v2-trained",
+   "downloads": 138,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/triage-0.8b-v2-trained",
+   "downloads": 128,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/khipu-abstain-1.5b-v2-trained",
+   "downloads": 131,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/khipu-r3-v2-trained",
+   "downloads": 133,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/willay-r2-v2-trained",
+   "downloads": 134,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/willay-r1-v2-trained",
+   "downloads": 137,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/miniembed-nano-v2-trained",
+   "downloads": 130,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/chakana-r1-v2-trained",
+   "downloads": 128,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/receiptagent-1.5b-v2-trained",
+   "downloads": 136,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/doctrine-v2-r2-trained",
+   "downloads": 127,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/freeenergy-r1-v2-trained",
+   "downloads": 127,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/doctrine1-r1-v2-trained",
+   "downloads": 121,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/ouroboros-r2-v2-trained",
+   "downloads": 121,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/governed-norm-v2-trained",
+   "downloads": 108,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/ancient-math-r1-v2-trained",
+   "downloads": 120,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/acoustic-r1-v2-trained",
+   "downloads": 123,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/lean-inv-r1-v2-trained",
+   "downloads": 111,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-khipu-r2-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-brain-navigator-r2-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-chaski-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-chaski-r4-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-chaski-r2-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-a11oy-mini-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-chaski-5050-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-willay-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/doctrine-math-r1-candidate",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/abstention-doctrine-r1-candidate",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-prime-principle-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-formula-proving-ground-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-lean-invariants-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-lean-math-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/absrl-grpo-r1-candidate",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-verticals-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-papers-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-puzzles-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-frontier-v4-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-frontier-qwen-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-kamachikuna-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-anatomy-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-secondbrain-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-flagship54-v1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/absrl-grpo-r2-candidate",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/absrl-grpo-r3-candidate",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/absrl-grpo-r4-candidate",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/absrl-grpo-r5-candidate",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/szl-provenance-native-v1-lora",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-frontier-v5-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/absrl-grpo-r5b-candidate",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/szl-provenance-native-v2-lora",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-quant-abstention-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-measurement-honesty-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-x402-frontier-v2",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-doctrine-dpo-r2",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-lora-mistral7b-quant-v1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-lean-math-v2-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-chaski-r4-r2",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/doctrine-math-r2-pilot",
+   "downloads": 7,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-abstention-sft-v1-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-distill-sft-v1-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-brain-v35",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-abstain-doctrine",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-worldscience",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-hatun24",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-quant",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/szl-provenance-native-v3-lora",
+   "downloads": 291,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-flagship54-khipu-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-khipu-scholar-v1",
+   "downloads": 32,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-khipu-scholar-4b-v1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-khipu-structure-v1",
+   "downloads": 269,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-vgl-puzzles-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l2",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/frontier-54-doctrine-math-r1-candidate",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/szl-provenance-native-v4-lora",
+   "downloads": 311,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l3",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l4",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-flagship55-v1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l5",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/szl-cram",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/szl-provenance-native-v5-lora",
+   "downloads": 17,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l6",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l7",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l8",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l9",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l10",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-axiom-invariants-r3",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-clinical-abstention-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-killinchu-eye-detector-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-physics-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-quant-curriculum-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-acoustic-governance-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ancient-math-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-free-energy-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-x402-protocol-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-rag-corpus-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-muhu-methodology-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/oac-system-health-v3-candidate",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l11",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-chaski-r4-r3",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-pg54-yachay-v1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-pg54-khipu-v1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-pg54-lutar-v1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-pg54-hatun-v1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-pg54-codex-v1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-lutar-axioms-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-szl-quant-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-provenance-native-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-world-science-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-physics-tutor-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/forge-v3-candidate",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l13",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l14",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l19",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l20",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l21",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l22",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l23",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l24",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l25",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l26",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l27",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l28",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l29",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l30",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l31",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l32",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l33",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l34",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l35",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l36",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l37",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l38",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l39",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l40",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l41",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l42",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l43",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l44",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l45",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l46",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l47",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l48",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l49",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l50",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l51",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l52",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l53",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l54",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l55",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l56",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l57",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l58",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l59",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l60",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l61",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l62",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l63",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l64",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l65",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l66",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l67",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l68",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l69",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l70",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l71",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l72",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l73",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l74",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l75",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l76",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l77",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l78",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l79",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l80",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l81",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l82",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l83",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l84",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l85",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l86",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l87",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l88",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l89",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l90",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l91",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l92",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l93",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l94",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l95",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l96",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l97",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l98",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l99",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l100",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l101",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l102",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l103",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l104",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l105",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l106",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l107",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l108",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l109",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l110",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l111",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l112",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l113",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l114",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l115",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l116",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l117",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l118",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l119",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l120",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l121",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l122",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l123",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l124",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l125",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l126",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l127",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l128",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l129",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l130",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l131",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l132",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l133",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-ouro-l134",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-ring-v4",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-abst-curriculum-v2-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-cram-sudoku-ext-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/backup-salad-flagship54-v2",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/backup-salad-physics-tutor-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/backup-salad-world-science-r1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/salad-chaski-calib-v1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/khipu-structure-v2-work",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/dream-learner-v1",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/szl-run-receipts",
+   "downloads": 0,
+   "verified_gone": true
+  },
+  {
+   "id": "SZLHOLDINGS/kimi-estate-ops",
+   "downloads": 6,
+   "verified_gone": true
+  }
+ ]
+}
